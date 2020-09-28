@@ -29,7 +29,7 @@ do
     mkdir -p $outDir/LogErr
     mkdir -p $outDir/Removed
 
-    inDir=../FastqFiles
+    inDir=./FastqFiles
     in1=${s}.fastq # Files should already be unzipped
 
     preout1=${outDir}/${s}_noAdaptR_1.fastq
