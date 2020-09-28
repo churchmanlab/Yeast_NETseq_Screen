@@ -1,0 +1,18 @@
+
+### Parameters used for alignNETseq.sh
+
+# The project name will serve as the mother directory for all generated files
+Project Name : AlignedNETseq
+
+# Provide the sample(s) name(s); if more than 1, separate them by "\n" (without spaces surrounding the "\n")
+# Example shown with 4 wildtype replicates
+Sample Names : wt-1\nwt-2\nwt-3\nwt-4
+
+# Provide an email adress, so that you will get notified whenever a job successfully completes (or fails....)
+Notification Email : example_email@abc.com
+
+# provide the file containing all splicing intermediates position (1 based) with the structure : chromosome_strand_position
+Splicing Intermediate file : ../0_Annotations/Scerevisiae_R64/SI_coordinates_1based.txt
+
+# provide the directory of the genome index that is going be used by the Bowtie2 aligner
+Index Directory : ./0_Annotations/Scerevisiae_R64/Scer_GCF_000146045.2_R64
