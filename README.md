@@ -7,7 +7,8 @@ This repository includes the scripts and annotation files needed to analyze NET-
 
 # Analysis steps
 1. Align NET-seq data
-2. 
+2. Identify differentially expressed genes and enriched gene ontology terms
+3. 
 
 
 The link to our full manuscript will be provided here upon publication. 
