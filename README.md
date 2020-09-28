@@ -8,7 +8,10 @@ This repository includes the scripts and annotation files needed to analyze NET-
 # Analysis steps
 1. Align NET-seq data
 2. Identify differentially expressed genes and enriched gene ontology terms
-3. 
-
+3. Quantify antisense transcription
+4. Calculate pausing indices around RNA processing sites
+5. Identify Pol II pause loci
+6. Build a random forest classifier to predict Pol II pause loci
+7. Correlated transcriptional phenotypes with one another
 
 The link to our full manuscript will be provided here upon publication. 
