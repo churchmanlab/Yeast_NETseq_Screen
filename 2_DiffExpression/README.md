@@ -2,4 +2,15 @@
 Expression levels were determined for each gene using the entire sequencing read (rather than only the 3’ end, as typical when determining Pol II location from NET-seq data) and normalized using DESeq2 (Love et al., 2014). Differential expression analysis between deletion strains (with replicates) and wild-type strains was performed using DESeq2 (Love et al., 2014) for all UCSC known genes. Genes were considered differentially expressed if they had an adjusted p-value < 0.05 and an absolute log2 fold change > 1.0. GO term enrichment analysis was performed using the PANTHER GO Enrichment Analysis (Ashburner et al., 2000; Mi et al., 2019; The Gene Ontology Consortium, 2019; Thomas et al., 2003) and enriched terms for biological processes, molecular function, and cellular components were recorded for up-regulated differentially expressed genes, down-regulated differentially expressed genes, and all differentially expressed genes. 
 
 # To identify differentially expressed genes
-1. ...
+1. Create files required for running DESeq2 (counts and sample matrix) by running `./Scripts/makeDESeqMatrix.sh Sample-1 Sample-2 SampleName`. This script can accommodate up to 4 wildtype samples and 6 perturbation samples. Running this command will result in two files:
+   - `SampleName.mat.txt`, which is a gene x sample matrix containing un-normalized gene expression calculated from the full NET-seq read
+   - `SampleName.cond.txt`, which is a properly formatted list of samples
+2. Run DESeq2 with the command `./Scripts/DESeqAnalysis.R SampleName`. This will report the total number of DE genes and produce another two files:
+   - `SampleName.ALLgenes.txt`, which is the complete output from running DESeq2
+   - `SampleName.DEgenes.txt`, which is the output of DESeq2, filtered to only include those genes with pAdj < 0.05 and |Log2FoldChange| > 1
+3. Create a volcano plot illlustrating differentially expressed genes with the command `./Scripts/plotVolcano.R SampleName`, which will save the plot to a file called `SampleName_volcano.svg`
+4. To re-create **Figure 1C**, run the command `./Scripts/plotNumDEgenes.R` to produce the plot called `NumDEgenes.svg`. The input file for this script, `Screen_nDE.txt` was created by transcribing the output of the volcano plot script (Step 3) for each deletion strain (4 columns: Deletion strain name, number of differentially up-regulated genes, number of differentially down-regulated genes, total number of differentially expressed genes).
+5. To re-create **Figure 1D**, run the command `./Scripts/plotCDFforDEgenes.R` to produce the plot called `CDFforDEgenes.svg`. The input file for this script, `DEgeneCount.txt`, was created by running the following command after DESeq2 (Step 2) was complete for each deletion strain: `cat *DEgenes.txt | cut -f 1 | grep -v baseMean | sort | uniq -c | awk 'BEGIN {OFS="\t"} {print $1, $2}' | sort -k1 -n  > DEgeneCount.txt`
+6. To re-create **Figure S1C-D**, run the command 
+
+All of these analyses may be run while only considering the interior gene body to avoid potential biases of Pol II pausing at the TSS or pA sites. This analysis (which produced **Figure S1B**) is identical to the above analysis, but Step 1 is run with the command `./Scripts/makeDESeqMatrix_subgenic.sh Sample-1 Sample-2 SampleName` instead. 
