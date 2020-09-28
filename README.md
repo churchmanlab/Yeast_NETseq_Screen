@@ -14,4 +14,5 @@ This repository includes the scripts and annotation files needed to analyze NET-
 6. Build a random forest classifier to predict Pol II pause loci
 7. Correlated transcriptional phenotypes with one another
 
-The link to our full manuscript will be provided here upon publication. 
+# Data availability and manuscript
+Fastq files for NET-seq data will be deposited to GEO; when available, the accession number will be listed here. The link to our full manuscript will be provided here upon publication. 
