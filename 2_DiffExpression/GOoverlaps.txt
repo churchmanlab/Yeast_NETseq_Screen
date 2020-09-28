@@ -1,0 +1,303 @@
+90S preribosome (GO:003068)	 cac3 cdc39
+active transmembrane transporter activity (GO:002280)	 cac1 dhh1
+ADP metabolic process (GO:004603)	 hpc2
+allantoin catabolic process (GO:000025)	 vps15
+allantoin metabolic process (GO:000025)	 vps15
+alpha-amino acid metabolic process (GO:190160)	 rph1
+amide biosynthetic process (GO:004360)	 cac1 cac2 cac3 cdc39
+anatomical structure development (GO:004885)	 dhh1
+anatomical structure formation involved in morphogenesis (GO:004864)	 dhh1
+anatomical structure morphogenesis (GO:000965)	 dhh1
+anion transmembrane transporter activity (GO:000850)	 chd1 nap1
+anion transmembrane transport (GO:009865)	 chd1 set3
+ascospore-type prospore (GO:004276)	 dhh1
+ATP biosynthetic process (GO:000675)	 hpc2
+ATP generation from ADP (GO:000675)	 hpc2
+ATP metabolic process (GO:004603)	 hpc2
+binding (GO:000548)	 cdc73 leo1 rsc30
+biological_process (GO:000815)	 cac1 cac2 cac3 cdc39 cdc73 ctr9 dhh1 gcn5 ino80 paf1 vps34
+biological regulation (GO:006500)	 cac1 chd1 ino80 leo1 leo1 rsc30
+biosynthetic process (GO:000905)	 cac2 cac3 cdc39
+branched-chain amino acid catabolic process (GO:000908)	 cac3
+carbohydrate binding (GO:003024)	 gcn5
+carbohydrate biosynthetic process (GO:001605)	 cbc1 dhh1 eaf1 hpc2
+carbohydrate catabolic process (GO:001605)	 cac2 cbc1 dhh1 eaf1 gcn5
+carbohydrate:cation symporter activity (GO:000540)	 dhh1
+carbohydrate metabolic process (GO:000597)	 cac1 cac2 cbc1 dhh1 eaf1 hpc2 ino80 vps34
+carbohydrate:proton symporter activity (GO:000535)	 dhh1
+carbohydrate transmembrane transporter activity (GO:001514)	 dhh1
+carboxylic acid transmembrane transporter activity (GO:004694)	 nap1
+carboxylic acid transmembrane transport (GO:190503)	 nap1
+carboxylic acid transport (GO:004694)	 nap1
+catalytic complex (GO:190249)	 cac1 cac2 rsc30 set3
+cation transmembrane transporter activity (GO:000832)	 ino80
+cation transmembrane transport (GO:009865)	 ino80 set2
+cation transport (GO:000681)	 ino80 set2
+cell (GO:000562)	 cdc39 eaf1
+cell part (GO:004446)	 cdc39 eaf1
+cell periphery (GO:007194)	 cac1 dhh1 eaf1 gcn5 hda1 hpc2 ino80 paf1 set2 vps34
+cellular amide catabolic process (GO:004360)	 vps15
+cellular amide metabolic process (GO:004360)	 cac1 cac2 cac3 cdc39 set2
+cellular aromatic compound metabolic process (GO:000672)	 cdc73 ctr9 ino80 paf1 rtf1
+cellular biosynthetic process (GO:004424)	 cac2 cac3 cdc39 leo1 leo1
+cellular carbohydrate biosynthetic process (GO:003463)	 dhh1
+cellular carbohydrate metabolic process (GO:004426)	 cbc1 dhh1 eaf1 vps34
+cellular component biogenesis (GO:004408)	 cac3 cdc39 hda1 htz1 ino80 rsc30 set2
+cellular_component (GO:000557)	 cac1 cac2 cac3 cdc39 cdc73 ctr9 dhh1 gcn5 ino80 paf1 rsc30 vps34
+cellular component organization (GO:001604)	 chd1 set2
+cellular component organization or biogenesis (GO:007184)	 cbc1 cdc73 chd1 gcn5 htz1 leo1 leo1 rsc30 set2 set3
+cellular glucan metabolic process (GO:000607)	 dhh1 vps34
+cellular localization (GO:005164)	 rtt103
+cellular macromolecule biosynthetic process (GO:003464)	 cac2 cac3 cdc39 cdc73 gcn5 htz1 ino80 leo1 leo1 rsc30 rtf1 vps34
+cellular macromolecule metabolic process (GO:004426)	 cac3 cbc1 cdc73 eaf1 gcn5 hda1 ino80 isw2 leo1 leo1 rsc30
+cellular metabolic process (GO:004423)	 cac3 cdc39
+cellular nitrogen compound biosynthetic process (GO:004427)	 cac1 cac2 cac3 cdc39 cdc73 paf1
+cellular nitrogen compound metabolic process (GO:003464)	 cac3 cdc39 cdc73 ctr9 ino80 paf1 rtf1 vps34
+cellular polysaccharide metabolic process (GO:004426)	 dhh1 vps34
+cellular process (GO:000998)	 eaf1 leo1 leo1 rtt103
+cellular protein-containing complex assembly (GO:003462)	 cbc1 ino80 set2
+cellular protein metabolic process (GO:004426)	 cac2 cac3 cdc39 eaf1 hda1 isw2 npl3
+cell wall (GO:000561)	 cbc1 dhh1 eaf1 hda1 npl3
+cell wall organization (GO:007155)	 cbc1 dhh1
+cell wall organization or biogenesis (GO:007155)	 dhh1
+chromosomal part (GO:004442)	 cac1 cac2 rsc30
+chromosome organization (GO:005127)	 cac2 eaf1 rsc30
+coenzyme metabolic process (GO:000673)	 hpc2
+cofactor metabolic process (GO:005118)	 hpc2
+cofactor transport (GO:005118)	 vps34
+cytoplasm (GO:000573)	 cdc39 eaf1
+cytoplasmic part (GO:004444)	 cac1 cac2 cac3 cdc39
+cytoplasmic translation (GO:000218)	 cac1 cac2 cac3 cdc39
+cytosol (GO:000582)	 cac1 cac2 cac3 cdc39
+cytosolic large ribosomal subunit (GO:002262)	 cac1 cac2 cac3 cdc39
+cytosolic part (GO:004444)	 cac1 cac2 cac3 cdc39 cdc73
+cytosolic ribosome (GO:002262)	 cac1 cac2 cac3 cdc39
+cytosolic small ribosomal subunit (GO:002262)	 cac1 cac2 cac3 cdc39
+DNA binding (GO:000367)	 cac1 cac2
+DNA metabolic process (GO:000625)	 vps34
+drug catabolic process (GO:004273)	 vps15
+drug metabolic process (GO:001714)	 cac1 cbc1 dhh1
+drug transmembrane transporter activity (GO:001523)	 cac1
+envelope (GO:003197)	 eaf1
+ethanol metabolic process (GO:000606)	 npl3
+external encapsulating structure (GO:003031)	 cbc1 dhh1 eaf1 hda1 npl3
+external encapsulating structure organization (GO:004522)	 cbc1 dhh1
+extracellular region (GO:000557)	 eaf1
+fungal-type cell wall (GO:000927)	 cbc1 dhh1 eaf1 hda1 npl3
+fungal-type cell wall organization (GO:003150)	 cbc1 dhh1 eaf1
+fungal-type cell wall organization or biogenesis (GO:007185)	 dhh1 eaf1
+fungal-type vacuole (GO:000032)	 dhh1 ino80
+gene expression (GO:001046)	 cac2 cac3 cbc1 cdc39 cdc73 ctr9 dhh1 eaf1 gcn5 hda1 htz1 ino80 leo1 leo1 npl3 paf1 rsc30 rtf1 set2 vps34
+generation of precursor metabolites and energy (GO:000609)	 cbc1 dhh1
+glucan metabolic process (GO:004404)	 dhh1 vps34
+gluconeogenesis (GO:000609)	 hpc2
+glucose metabolic process (GO:000600)	 cbc1 eaf1 gcn5 hpc2
+glucosidase activity (GO:001592)	 eaf1
+glutamine family amino acid metabolic process (GO:000906)	 rph1
+glycolytic process (GO:000609)	 hpc2
+heterocycle metabolic process (GO:004648)	 cdc73 ctr9 ino80 paf1 rtf1
+heterocyclic compound binding (GO:190136)	 ino80
+hexose biosynthetic process (GO:001931)	 hpc2
+hexose catabolic process (GO:001932)	 gcn5
+hexose metabolic process (GO:001931)	 cbc1 dhh1 eaf1 gcn5 hpc2
+hydrolase activity, acting on glycosyl bonds (GO:001679)	 eaf1 vps34
+hydrolase activity, hydrolyzing O-glycosyl compounds (GO:000455)	 dhh1 eaf1 vps34
+inorganic cation transmembrane transporter activity (GO:002289)	 ino80
+inorganic ion transmembrane transport (GO:009866)	 ino80 set2
+inorganic molecular entity transmembrane transporter activity (GO:001531)	 cac1 dhh1 ino80 nap1 set2
+integral component of membrane (GO:001602)	 cdc73 ctr9 ino80 paf1 rsc30 set2
+integral component of plasma membrane (GO:000588)	 cac1 cdc73 ctr9 dhh1 eaf1 gcn5 htz1 ino80 npl3 paf1 set2 vps34
+intracellular (GO:000562)	 cdc39 chd1 eaf1 hda1 rtf1 set2
+intracellular immature spore (GO:004276)	 dhh1
+intracellular membrane-bounded organelle (GO:004323)	 cac1 cac2 cac3 cbc1 chd1 eaf1 isw1 set2
+intracellular non-membrane-bounded organelle (GO:004323)	 cac2 cac3 cbc1 cdc39 cdc73 ctr9 dhh1 gcn5 hda1 htz1 ino80 isw1 isw2 npl3 paf1 rsc30 rtf1 set2 vps34
+intracellular organelle (GO:004322)	 cbc1 chd1 eaf1 hda1 htz1 ino80 isw1 npl3 rtf1 set2
+intracellular organelle lumen (GO:007001)	 cac1 cac2 cdc73 chd1 gcn5 hda1 rtf1 set2
+intracellular organelle part (GO:004444)	 bre1 cbc1 cdc73 chd1 ctr9 dhh1 eaf1 gcn5 hda1 hpc2 htz1 ino80 isw1 isw2 npl3 paf1 rsc30 rtf1 set2 set3 vps34
+intracellular part (GO:004442)	 cdc39 chd1 eaf1 hda1 rtf1 set2
+intrinsic component of membrane (GO:003122)	 bre1 cdc73 ctr9 dhh1 ino80 npl3 paf1 rsc30 set2
+intrinsic component of plasma membrane (GO:003122)	 cac1 cdc73 ctr9 dhh1 eaf1 gcn5 htz1 ino80 npl3 paf1 set2 vps34
+ion transmembrane transporter activity (GO:001507)	 cac1 cdc73 htz1 ino80 nap1 rsc30 set2
+ion transmembrane transport (GO:003422)	 cac1 ino80 rsc30 set2
+ion transport (GO:000681)	 cac1 cdc73 htz1 ino80 rsc30 set2 vps34
+iron ion transport (GO:000682)	 htz1
+large ribosomal subunit (GO:001593)	 cac1 cac2 cac3 cdc39 eaf1
+lytic vacuole (GO:000032)	 dhh1 ino80 rsc30
+macromolecule biosynthetic process (GO:000905)	 cac1 cac2 cac3 cdc39 cdc73 gcn5 htz1 ino80 leo1 leo1 rsc30 rtf1
+macromolecule metabolic process (GO:004317)	 cac3 cbc1 cdc73 chd1 eaf1 gcn5 hda1 htz1 ino80 isw2 leo1 leo1 npl3 rsc30 set2
+macromolecule modification (GO:004341)	 npl3
+maturation of SSU-rRNA from tricistronic rRNA transcript (SSU-rRNA, 5.8S rRNA, LSU-rRNA) (GO:000046)	 cac2 cac3 cdc39
+maturation of SSU-rRNA (GO:003049)	 cac2 cac3 cdc39
+membrane-bounded organelle (GO:004322)	 cac1 cac2 cac3 cbc1 chd1 eaf1 isw1 npl3 set2
+membrane-enclosed lumen (GO:003197)	 cac1 cac2 cdc73 chd1 gcn5 hda1 rtf1 set2
+membrane (GO:001602)	 ctr9 dhh1 ino80 paf1 vps34
+membrane part (GO:004442)	 cdc73 ctr9 ino80 paf1 rsc30 set2 vps34
+metabolic process (GO:000815)	 cac2 cac3 cdc39
+metal ion transport (GO:003000)	 set2
+mitochondrial inner membrane (GO:000574)	 eaf1
+mitochondrial part (GO:004442)	 eaf1
+mitochondrial protein complex (GO:009879)	 eaf1
+molecular_function (GO:000367)	 cac1 cac2 cac3 cdc39 cdc73 ctr9 dhh1 gcn5 ino80 isw2 paf1 vps34
+monocarboxylic acid biosynthetic process (GO:007233)	 hpc2
+monocarboxylic acid metabolic process (GO:003278)	 cbc1
+monocarboxylic acid transmembrane transporter activity (GO:000802)	 nap1
+monocarboxylic acid transport (GO:001571)	 nap1
+monosaccharide biosynthetic process (GO:004636)	 dhh1 hpc2
+monosaccharide metabolic process (GO:000599)	 cbc1 dhh1 eaf1 gcn5 hpc2
+ncRNA export from nucleus (GO:009706)	 cac2 cac3
+ncRNA metabolic process (GO:003466)	 cdc39 htz1 ino80
+ncRNA processing (GO:003447)	 cac3 cdc39
+negative regulation of biological process (GO:004851)	 leo1 leo1 rsc30
+negative regulation of cellular process (GO:004852)	 leo1 leo1
+negative regulation of macromolecule metabolic process (GO:001060)	 rsc30
+negative regulation of metabolic process (GO:000989)	 rsc30
+nicotinamide nucleotide biosynthetic process (GO:001935)	 hpc2
+nicotinamide nucleotide metabolic process (GO:004649)	 hpc2
+nitrogen compound metabolic process (GO:000680)	 cac3 cdc39 eaf1 hda1 ino80 leo1 leo1 npl3 rsc30 set2
+non-membrane-bounded organelle (GO:004322)	 cac2 cac3 cbc1 cdc39 cdc73 ctr9 dhh1 gcn5 hda1 htz1 ino80 isw1 isw2 npl3 paf1 rsc30 rtf1 set2 vps34
+nuclear chromosome (GO:000022)	 cac2
+nuclear chromosome part (GO:004445)	 cac2
+nuclear lumen (GO:003198)	 cac1 cac2 cdc73 dhh1 gcn5 ino80 rsc30 set2 vps34
+nuclear nucleosome (GO:000078)	 hpc2
+nuclear part (GO:004442)	 cac1 cac2 cbc1 cdc73 chd1 dhh1 gcn5 hda1 hpc2 htz1 ino80 npl3 paf1 rsc30 rtf1 set2 set3 vps34
+nucleic acid binding (GO:000367)	 cdc73 gcn5 ino80 rsc30 vps34
+nucleic acid metabolic process (GO:009030)	 cbc1 cdc73 dhh1 gcn5 hda1 htz1 ino80 isw1 leo1 leo1 paf1 rsc30 rtf1 vps34
+nucleic acid phosphodiester bond hydrolysis (GO:009030)	 paf1
+nucleic acid-templated transcription (GO:009765)	 cac1
+nucleobase-containing compound metabolic process (GO:000613)	 cdc73 ctr9 gcn5 ino80 paf1 rtf1
+nucleolus (GO:000573)	 dhh1 ino80
+nucleoplasm (GO:000565)	 ino80
+nucleoside diphosphate metabolic process (GO:000913)	 hpc2
+nucleoside diphosphate phosphorylation (GO:000616)	 hpc2
+nucleoside phosphate catabolic process (GO:190129)	 hpc2
+nucleotide catabolic process (GO:000916)	 hpc2
+nucleotide phosphorylation (GO:004693)	 hpc2
+nucleus (GO:000563)	 cac1 cac2 cbc1 cdc73 chd1 dhh1 gcn5 hda1 htz1 ino80 isw1 isw2 npl3 rsc30 set2 set3 vps15
+organelle assembly (GO:007092)	 cdc39
+organelle envelope (GO:003196)	 eaf1
+organelle (GO:004322)	 cbc1 chd1 eaf1 hda1 ino80 isw1 npl3 rtf1 set2
+organelle inner membrane (GO:001986)	 eaf1
+organelle lumen (GO:004323)	 cac1 cac2 cdc73 chd1 gcn5 hda1 rtf1 set2
+organelle membrane (GO:003109)	 eaf1
+organelle organization (GO:000699)	 cbc1 cdc73 chd1 eaf1 gcn5 isw1 leo1 leo1
+organelle part (GO:004442)	 bre1 cbc1 cdc73 chd1 ctr9 dhh1 eaf1 gcn5 hda1 hpc2 htz1 ino80 isw1 isw2 npl3 paf1 rsc30 rtf1 set2 set3 vps34
+organelle subcompartment (GO:003198)	 cac2 cbc1
+organic acid metabolic process (GO:000608)	 cdc39
+organic acid transmembrane transporter activity (GO:000534)	 nap1
+organic acid transmembrane transport (GO:190382)	 nap1
+organic acid transport (GO:001584)	 nap1
+organic anion transmembrane transporter activity (GO:000851)	 chd1 nap1
+organic cyclic compound binding (GO:009715)	 ino80
+organic cyclic compound metabolic process (GO:190136)	 cdc73 ctr9 ino80 paf1 rtf1
+organic hydroxy compound metabolic process (GO:190161)	 cbc1
+organic substance biosynthetic process (GO:190157)	 cac2 cac3 cdc39
+organic substance metabolic process (GO:007170)	 cac2 cac3 cdc39
+organonitrogen compound biosynthetic process (GO:190156)	 cac1 cac2 cac3 cdc39
+organonitrogen compound metabolic process (GO:190156)	 cac1 cac2 cac3 cdc39
+organophosphate catabolic process (GO:004643)	 hpc2
+oxidation-reduction process (GO:005511)	 cac1 cac2 cbc1 cdc73 dhh1 ino80 npl3 paf1 vps34
+oxidoreductase activity (GO:001649)	 cdc73 ino80
+oxidoreduction coenzyme metabolic process (GO:000673)	 hpc2
+oxoacid metabolic process (GO:004343)	 cdc39
+peptide biosynthetic process (GO:004304)	 cac1 cac2 cac3 cdc39 eaf1 paf1
+peptide metabolic process (GO:000651)	 cac1 cac2 cac3 cdc39
+plasma membrane (GO:000588)	 cac1 cdc39 ctr9 dhh1 eaf1 gcn5 hpc2 htz1 ino80 isw2 paf1 set2 set3 vps34
+plasma membrane part (GO:004445)	 ctr9 dhh1 gcn5 ino80 paf1 vps34
+polysaccharide metabolic process (GO:000597)	 dhh1 eaf1 vps34
+positive regulation of biological process (GO:004851)	 cac2 ino80 rsc30
+positive regulation of cellular process (GO:004852)	 cac2 ino80 rsc30
+positive regulation of macromolecule metabolic process (GO:001060)	 rsc30
+positive regulation of metabolic process (GO:000989)	 rsc30
+positive regulation of nitrogen compound metabolic process (GO:005117)	 rsc30
+positive regulation of nucleic acid-templated transcription (GO:190350)	 cac2
+positive regulation of nucleobase-containing compound metabolic process (GO:004593)	 rsc30
+positive regulation of RNA biosynthetic process (GO:190268)	 cac2
+positive regulation of transcription, DNA-templated (GO:004589)	 cac2
+preribosome (GO:003068)	 cac2 cac3 cdc39
+preribosome, large subunit precursor (GO:003068)	 cdc39
+primary alcohol metabolic process (GO:003430)	 npl3
+primary metabolic process (GO:004423)	 cac2 cac3 cdc39 hda1
+prospore membrane (GO:000562)	 dhh1
+protein binding (GO:000551)	 hda1 isw1 leo1 rsc30
+protein-containing complex assembly (GO:006500)	 cbc1 ino80 set2
+protein-containing complex (GO:003299)	 bre1 cbc1 cdc73 chd1 ctr9 dhh1 eaf1 gcn5 hda1 htz1 ino80 isw1 isw2 npl3 paf1 rsc30 rtf1 rtt103 set2 set3 vps15 vps34
+protein-containing complex subunit organization (GO:004393)	 cbc1 set2
+protein metabolic process (GO:001953)	 cac2 cac3 cdc39 eaf1 hda1 npl3
+protein transport to vacuole involved in ubiquitin-dependent protein catabolic process via the multivesicular body sorting pathway (GO:004332)	 bre1
+purine nucleoside diphosphate metabolic process (GO:000913)	 hpc2
+purine nucleoside monophosphate metabolic process (GO:000912)	 hpc2
+purine nucleoside triphosphate metabolic process (GO:000914)	 hpc2
+purine ribonucleoside diphosphate metabolic process (GO:000917)	 hpc2
+purine ribonucleoside monophosphate metabolic process (GO:000916)	 hpc2
+purine ribonucleoside triphosphate metabolic process (GO:000920)	 hpc2
+pyridine-containing compound biosynthetic process (GO:007252)	 hpc2
+pyridine-containing compound metabolic process (GO:007252)	 hpc2
+pyridine nucleotide biosynthetic process (GO:001936)	 hpc2
+pyridine nucleotide metabolic process (GO:001936)	 hpc2
+pyruvate biosynthetic process (GO:004286)	 hpc2
+pyruvate metabolic process (GO:000609)	 hpc2
+regulation of biological process (GO:005078)	 cac1 cac2 cdc73 chd1 ino80 leo1 leo1 npl3 rsc30
+regulation of biosynthetic process (GO:000988)	 cac1 cac2 ino80
+regulation of cellular biosynthetic process (GO:003132)	 cac1 cac2 ino80
+regulation of cellular macromolecule biosynthetic process (GO:200011)	 cac1 cac2 ino80 rsc30
+regulation of cellular metabolic process (GO:003132)	 cac1 ino80 rsc30
+regulation of cellular process (GO:005079)	 cac1 cac2 cdc73 chd1 ino80 leo1 leo1 rsc30
+regulation of gene expression (GO:001046)	 ino80 rsc30
+regulation of macromolecule biosynthetic process (GO:001055)	 cac1 cac2 ino80 rsc30
+regulation of macromolecule metabolic process (GO:006025)	 ino80 rsc30
+regulation of metabolic process (GO:001922)	 cac1 ino80 rsc30
+regulation of nitrogen compound metabolic process (GO:005117)	 cac1 ino80 rsc30
+regulation of nucleic acid-templated transcription (GO:190350)	 cac1 cac2
+regulation of nucleobase-containing compound metabolic process (GO:001921)	 cac1 cac2 ino80
+regulation of primary metabolic process (GO:008009)	 cac1 ino80 rsc30
+regulation of RNA biosynthetic process (GO:200114)	 cac1 cac2
+regulation of RNA metabolic process (GO:005125)	 cac2 ino80
+regulation of transcription by RNA polymerase II (GO:000635)	 cac2
+regulation of transcription, DNA-templated (GO:000635)	 cac1 cac2
+regulation of translational fidelity (GO:000645)	 cac3
+response to chemical (GO:004222)	 paf1
+ribonucleoprotein complex assembly (GO:002261)	 cdc39
+ribonucleoprotein complex biogenesis (GO:002261)	 cac2 cac3 cbc1 cdc39 ino80 rsc30 rtf1
+ribonucleoprotein complex (GO:199090)	 cac1 cac2 cac3 cdc39 cdc73 ctr9 hda1 htz1 npl3 rsc30 rtf1
+ribonucleoprotein complex subunit organization (GO:007182)	 cdc39
+ribonucleoside diphosphate metabolic process (GO:000918)	 hpc2
+ribonucleoside triphosphate metabolic process (GO:000919)	 hpc2
+ribosomal small subunit assembly (GO:000002)	 cac2 cac3 cdc39
+ribosomal small subunit biogenesis (GO:004227)	 cac1 cac2 cac3 cdc39
+ribosomal subunit (GO:004439)	 cac1 cac2 cac3 cdc39 ctr9 eaf1 paf1
+ribosome assembly (GO:004225)	 cac1 cac2 cac3 cdc39
+ribosome biogenesis (GO:004225)	 cac2 cac3 cbc1 cdc39 gcn5 ino80 paf1
+ribosome (GO:000584)	 cac1 cac2 cac3 cdc39 ctr9
+RNA binding (GO:000372)	 cac3 gcn5
+RNA biosynthetic process (GO:003277)	 cac1
+RNA metabolic process (GO:001607)	 cbc1 cdc73 dhh1 gcn5 hda1 htz1 ino80 isw1 leo1 leo1 npl3 paf1 rsc30 rtf1 set2 vps34
+RNA processing (GO:000639)	 gcn5 hda1 ino80 rsc30 rtf1 vps34
+rRNA binding (GO:001984)	 cac1 cac2 cac3 cdc39
+rRNA-containing ribonucleoprotein complex export from nucleus (GO:007142)	 cac3
+rRNA export from nucleus (GO:000640)	 cac2 cac3
+rRNA metabolic process (GO:001607)	 cac3 cdc39
+rRNA processing (GO:000636)	 cac3 cdc39
+rRNA transport (GO:005102)	 cac2 cac3
+secondary active transmembrane transporter activity (GO:001529)	 cac1 htz1 isw1
+small molecule biosynthetic process (GO:004428)	 cbc1 gcn5
+small molecule catabolic process (GO:004428)	 cbc1
+small molecule metabolic process (GO:004428)	 cbc1 gcn5 ino80
+small ribosomal subunit (GO:001593)	 cac1 cac2 cac3 cdc39
+solute:cation symporter activity (GO:001529)	 dhh1 isw1
+solute:proton symporter activity (GO:001529)	 dhh1 isw1
+sporulation (GO:004393)	 dhh1
+sporulation resulting in formation of a cellular spore (GO:003043)	 dhh1
+storage vacuole (GO:000032)	 dhh1 ino80
+structural constituent of cell wall (GO:000519)	 dhh1
+structural constituent of ribosome (GO:000373)	 cac1 cac2 cac3 cdc39 eaf1
+structural molecule activity (GO:000519)	 cac1 cac2 cac3 cdc39
+symporter activity (GO:001529)	 dhh1 eaf1 isw1 npl3
+transcription, DNA-templated (GO:000635)	 cac1
+transcription regulator activity (GO:014011)	 cac2
+transferase complex (GO:199023)	 cac2
+transition metal ion transport (GO:000004)	 set2
+translation (GO:000641)	 cac1 cac2 cac3 cdc39 eaf1 paf1
+transmembrane transporter activity (GO:002285)	 cac1 cdc73 chd1 ctr9 dhh1 eaf1 gcn5 htz1 ino80 isw2 nap1 paf1 rsc30 set2 set3
+transmembrane transport (GO:005508)	 cac1 cdc73 eaf1 htz1 ino80 nap1 rsc30 set2 set3
+transporter activity (GO:000521)	 cac1 dhh1 htz1 ino80 rsc30 set2
+vacuole (GO:000577)	 dhh1 htz1 ino80 rsc30
