@@ -11,8 +11,7 @@ Pausing indices were calculated as the length-normalized Pol II density in the r
 2. To calculate the correlation between PIs within a single deletion strain, as shown in **Figure S3A**, run the command
 
 3. Create heatmaps for each gene in each deletion strain, as in **Figure 3B-C**. This can be done by running the script `./Scripts/plot_geneHeatmap_geneEnds.R SampleName` to produce plots `SampleName_TSS_GenePIheatmap.svg`, `SampleName_pA_GenePIheatmap.svg`, and `SampleName_Antisense_GenePIheatmap.svg`. To do the same for splice sites, run the script `./Scripts/plot_geneHeatmap_splice.R SampleName` to produce plots `SampleName_5pSS_GenePIheatmap.svg` and `SampleName_3pSS_GenePIheatmap.svg`
-
-4. To illustrate the cumulative density for all regions for a single sample, as in **Figure S3C**, 
+4. To illustrate the cumulative density for all regions for a single sample, as in **Figure S3C**, use the command `./Scripts/plotCDFpi.R` to generate the plot `PI_CDF.svg`
 
 5. To create heatmaps for PI similar to those in **Figure S3D-H**, run the command 
 
