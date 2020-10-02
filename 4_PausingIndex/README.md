@@ -17,6 +17,5 @@ Pausing indices were calculated as the length-normalized Pol II density in the r
 8. Metagene plots, as shown in **Figure 3K-Q** and **Figure S4A-D**, require some pre-script work to generate the necessary files for plotting. First, run the command `./Scripts/run_overlap_data.sh`, which generates the overlap files . From here, you can run `./Scripts/run_metagene_plot.sh`, which generates files ready for plotting in the directory `readyToPlot`. Finally, you can run the script `./Scripts/metagenePlot.R SampleName` to generate all metagene plots (TSS, pA, antisense, and both splice sites) for a given sample, which will be saved to files called `SampleNamevWT_metagene_....svg`
 
 # To calculate splicing indecies
-1. 
-
-
+1. Calculate splicing indecies with the command `./Scripts/junctionCounts_for_splicingIndex.py ../0_Annotations/Genes/Introns.bed SampleName.RNAseq.bam  SampleName.junctionCounts.txt`, which will produce a file named `SampleName.junctionCounts.txt`
+2. When junction counts for both perturbation and wildtype conditions have been calculated, use the script `./Scripts/plot_SIboxplot.R` to generate a boxplot, similar to that in **Figure S4F**
