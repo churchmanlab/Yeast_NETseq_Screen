@@ -14,6 +14,9 @@ Pausing indices were calculated as the length-normalized Pol II density in the r
 5. To create heatmaps for PI similar to those in **Figure S3D-H**, you first need to generate a file containing all PI values across all deletion strains with the command `cat *.PI.bed > ALL.PI.bed`. Then, run the script `./Scripts/plot_geneHeatmap_all.R TSS/pA/Anti/5pSS/3pSS` to geneate plots named `ALL_..._GenePIheatmap.svg`
 6. In order to plot the boxplot of all PI distributions across all deletion strains as in **Figure 3F-J**, use the command `./Scripts/plot_boxPlot.R`, which will produce plots called `PI_..._boxPlot.svg` as well as files with all of the median values for each region PI
 7. To calculate the correlation between median PI values across all deletion strains, as in **Figure 3D-E** and **Figure S3B**, use the command `./Scripts/plotMedianCor.R` to generate plots with the names `Medians_...v..._PIscatter.svg`
-8. Metagene plots, as shown in **Figure 3K-Q** and **Figure S4A-D**, require some pre-script work to generate the necessary files for plotting. First, run the command `./Scripts/run_overlap_data.sh`, which generates the overlap files...
+8. Metagene plots, as shown in **Figure 3K-Q** and **Figure S4A-D**, require some pre-script work to generate the necessary files for plotting. First, run the command `./Scripts/run_overlap_data.sh`, which generates the overlap files . From here, you can run `./Scripts/run_metagene_plot.sh`, which generates files ready for plotting in the directory `readyToPlot`. Finally, you can run the script `./Scripts/metagenePlot.R SampleName` to generate all metagene plots (TSS, pA, antisense, and both splice sites) for a given sample, which will be saved to files called `SampleNamevWT_metagene_....svg`
+
+# To calculate splicing indecies
+1. 
 
 
