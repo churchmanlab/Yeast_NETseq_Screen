@@ -18,10 +18,16 @@ The adapter sequence (ATCTCGTATGCCGTCTTCTGCTTG) was removed using cutadapt with 
 1. Inatall and load all required software
 2. Place NET-seq Fastq files in FastqFiles directory
 3. Edit alignmentParameters.txt. Can change Project Name, Sample Names, and Notification Email
-4. Edit Scripts/alignNETseq.sh such that BLOCKs 2-6 are commented out and not run. Note that this script is writted to be compatible with a SLURM job scheduler. If your cluster cannot interpret these jobs, edit the script to remove the wrapping job submission commands (`sbatch`...)
+4. Edit `./Scripts/alignNETseq.sh` such that BLOCKs 2-6 are commented out and not run (only one job sumbission is uncommented at a time). Note that this script is writted to be compatible with a SLURM job scheduler. If your cluster cannot interpret these jobs, edit the script to remove the wrapping job submission commands (`sbatch`...)
 5. Run the script from the 1_AlignData directory with the command `./Scripts/alignNETseq.sh alignmentParameters.txt`
-6. Use the same command 5 more times, commenting in a different BLOCK each time, in sequence
+6. Use the same command more times, commenting in a different job sumbission BLOCK each time, in sequence. When the last job is run, you will have produced the following files for each sample:
+   - `SampleName_cov_pos.bedGraph` and `SampleName_cov_neg.bedGraph`, in which the entire read contributes to the coverage
+   - `SampleName_stt_pos.bedGraph` and `SampleName_stt_neg.bedGraph`, in which the beginning of the read is mapped (represents Pol II position)
+   - `SampleName_end_pos.bedGraph` and `SampleName_end_pos.bedGraph`, in which the end of the read is mapped
 
-## Input to this code module: Fastq files for each sample of interest
-## Output of this code module: 
+# Once the data are aligned
+1. Move all completed coverage files to a new directory, `CoverageFiles/` with the command `mv *.bedGraph CoverageFiles` and remove any other temporary output files
+2. Combine and normalize for number of replicates with the command `./Scripts/combineReps.sh SampleName`. This will create output in a `CombinedReplicates/` directory. Note that replicates of each sample name are assumed to be in the format `SampleName-1`, `SampleName-2`, etc.
+3. Create RPM-normalized files with the command `./Scripts/calcRPM.sh SampleName`. Output files will be in the `RPMnormFiles` directory
+4. 
 
