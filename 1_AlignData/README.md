@@ -30,5 +30,5 @@ The adapter sequence (ATCTCGTATGCCGTCTTCTGCTTG) was removed using cutadapt with 
 2. Combine and normalize for number of replicates with the command `./Scripts/combineReps.sh SampleName`. This will create output in a `CombinedReplicates/` directory. Note that replicates of each sample name are assumed to be in the format `SampleName-1`, `SampleName-2`, etc.
 3. Create RPM-normalized files with the command `./Scripts/calcRPM.sh SampleName`. Output files will be in the `RPMnormFiles` directory
 4. Create RPKM-normalized files with the command `./Scripts/calcRPKM.sh SampleName`. Output files will be in the `RPKMnormFiles` directory
-5. Calculate correlation between two replicates with the command `./Scripts/`. To create a scatter plot illustrating this relationship, as shown in **Figure S1A**, use the command `./Scripts/`, which will generate a plot titled ``
+5. Calculate correlation between two replicates with the command `./Scripts/calcRepCorr.R SampleName-1 SampleName-2`. This will also create a scatter plot illustrating this relationship, as shown in **Figure S1A**, which will generate a plot titled `repCorr.SampleName-1.SampleName-2.svg`
 
