@@ -11,11 +11,7 @@ Pause density was calculated as the ratio of total number of pauses to the total
 4. To calculate pause density, as in **Figure 4D**, use the script `./Scripts/calcPauseDensitybyGene.sh deletionStrains.txt`. This will produce files containing the pause density of every gene in every deletion strain (files called `SampleName.pauseDensity.txt`) as well as a box plot called `pauseDensity.svg`
 5. To calculate pause strength (median percent of reads in pauses), as shown in **Figure S5B**, use the script
 These values can be correlated to sequencing depth, as is **Figure S5C** with the script `./Scripts/calcPauseStrength.sh` to generate the plot `pauseStrength.svg`
-
-6. In order to perform the PCA analysis on shared pause loci across deletion strains, as depicted in **Figure 4E**, use the script
-
-7. Shared pause loci can also be visualized as a heatmap, like that shown in **Figure S5D**. 
-
-
+6. In order to perform the PCA analysis on shared pause loci across deletion strains, as depicted in **Figure 4E**, use the script `./run_makeMutVector.sh deletionStrains.txt` to generate the requisit matrix file to then run `./Scripts/pausePCA.R` to produce the final plot `pausePCA.svg`
+7. Shared pause loci can also be visualized as a heatmap, like that shown in **Figure S5D**. In order to generate this figure, all pause loci for all deletion strains must be converted into vector form. This can be done by executing the script `./Scripts/makeLociVector.sh deletionStrains.txt`. Then, create the heatmap with the command `./Scripts/plot_pauseLociHeatmap.R`, which will generate the plot saved to a file called `pauseHeatmap.svg`. Note that this script may take a while to run!
 8. Pol II pause postion varies across the gene body, as illustrated in **Figure 4F**. Before this figure can be reproduced, first all pauses must be shuffled within high-coverage genes. This can be done with the command `./Scripts/shufflePauses.sh SampleName`, which will prouce the file `SampleName.IDRrep.SHUFFLE.bed`. Combine all shuffled pause files together with the command `cat *.IDRrep.SHUFFLE.bed > ALL.IDRrep.SHUFFLE.bed`.
 9. Now, real and shuffled pauses can be overlapped with regions of the gene body, which can be done with the command `./Scripts/countOverlap.sh deletionStrains.txt`. Finally, we can generate the bar plot with proportion of pauses in each gene region for each deletion strain with the command `./Scripts/plotOverlap.R`, which will produce the file `PauseGeneOverlap.svg`
