@@ -8,8 +8,14 @@ Pause density was calculated as the ratio of total number of pauses to the total
 1. First, pause loci need to be identified in each replicate. This can be done with the command `./Scripts/run_findPauses.sh SampleName`. Note that this is best submitted as a job to a cluster, as the calculations can take up to a day. This will result in the output files `SampleName-1.pausesNB_T3.???.bed`, which contain the loci of each pause in each replicate on each strand.
 2. Next, calculate the overall reproducibility and identify those reproducible pauses using IDR. This can be done using the command `./Scripts/IDR.sh`. This will produce a file of reproducible pauses, `SampleName_PASS_pauseScore.txt`,which can be transformed into a bedGraph file and used in a genome browser such as IGV to look at data similar to that displayed in **Figure 4B**. It will also produce a scatterplot, a file called `SampleName_IDRscatter.svg`, which is similar to that shown in **Figure 4C**. Note that this requires a file called `readTotal.txt` with 2 columns, one for the name of each replicate, and the other with the total number of uniquely-mapping reads in that sample. 
 3. Reproducibility of pauses across all deletion strains can be assessed using the command `./Scripts/plot_IDRrep.R`, which will produce the plot `IDRrep.svg`, which is similar to **Figure S5A**
+4. To calculate pause density, as in **Figure 4D**, use the script `./Scripts/calcPauseDensitybyGene.sh deletionStrains.txt`. This will produce files containing the pause density of every gene in every deletion strain (files called `SampleName.pauseDensity.txt`) as well as a box plot called `pauseDensity.svg`
+5. To calculate pause strength (median percent of reads in pauses), as shown in **Figure S5B**, use the script
+These values can be correlated to sequencing depth, as is **Figure S5C** with the script `./Scripts/calcPauseStrength.sh` to generate the plot `pauseStrength.svg`
 
-4. To calculate pause density...
+6. In order to perform the PCA analysis on shared pause loci across deletion strains, as depicted in **Figure 4E**, use the script
 
-5. To 
+7. Shared pause loci can also be visualized as a heatmap, like that shown in **Figure S5D**. 
 
+
+8. Pol II pause postion varies across the gene body, as illustrated in **Figure 4F**. Before this figure can be reproduced, first all pauses must be shuffled within high-coverage genes. This can be done with the command `./Scripts/shufflePauses.sh SampleName`, which will prouce the file `SampleName.IDRrep.SHUFFLE.bed`. Combine all shuffled pause files together with the command `cat *.IDRrep.SHUFFLE.bed > ALL.IDRrep.SHUFFLE.bed`.
+9. Now, real and shuffled pauses can be overlapped with regions of the gene body, which can be done with the command `./Scripts/countOverlap.sh deletionStrains.txt`. Finally, we can generate the bar plot with proportion of pauses in each gene region for each deletion strain with the command `./Scripts/plotOverlap.R`, which will produce the file `PauseGeneOverlap.svg`
