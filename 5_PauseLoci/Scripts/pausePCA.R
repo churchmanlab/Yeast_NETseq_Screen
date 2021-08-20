@@ -1,11 +1,11 @@
-#!/n/app/R/3.6.1/bin/Rscript
+#!/n/app/R/4.0.1/bin/Rscript
 
 # Perform PCA and plot deletion strain pauses 
 
 # Written by: K. Lachance
 # Date: July 14, 2019
 
-# Use: ./pausePCA.R mutPauseVectors.txt 
+# Use: ./Scripts/pausePCA.R mutPauseVectors.txt 
 
 # Install and load libraries
 cat("Loading libraries...\n")
@@ -31,4 +31,4 @@ q1 <- ggplot(pcs, aes(x = PC1, y = PC2)) +
    theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank()) +
    ggtitle("PC1 v PC2")
 
-ggsave(plot = q1, file = "pausePCA.svg", width = 5, height = 5)
+ggsave(plot = q1, file = "pausePCA.pdf", device="pdf", width = 5, height = 5)

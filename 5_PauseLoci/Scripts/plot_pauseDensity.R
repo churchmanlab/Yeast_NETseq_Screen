@@ -1,4 +1,4 @@
-#!/n/app/R/3.6.1/bin/Rscript
+#!/n/app/R/4.0.1/bin/Rscript
 
 # Plot boxplot of pause densities
 
@@ -11,8 +11,11 @@
 library(ggplot2)
 library(svglite)
 
+args <- commandArgs(trailingOnly = TRUE)
+covT <- args[1]
+
 # Read data
-data = read.table("ALL.pauseDensity.txt", stringsAsFactors = FALSE)
+data = read.table(paste0("ALL_cov", covT, ".pauseDensity.txt"), stringsAsFactors = FALSE, sep='\t')
 colnames(data) = c("Chr", "Start", "End", "Gene", "Blank", "Strand", "Npause", "Pdensity", "Mut")
 
 # Calculate median pause density
@@ -31,11 +34,11 @@ p <- ggplot(data, aes(x = reorder(Mut, Pdensity, FUN = median), y = Pdensity, gr
   geom_boxplot(outlier.shape = NA, coef = 0) + 
   scale_fill_manual(values = c("a" = "white", "b" = "darkcyan")) + 
   scale_color_manual(values = c("a" = "darkcyan", "b" = "black")) + 
-  coord_cartesian(ylim = c(0, 150)) +
+  coord_cartesian(ylim = c(0, 75)) +
   theme_bw() + 
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank()) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
   theme(legend.position = "none")
 
-ggsave(file="pauseDensity.svg", plot=p, width=10, height=6)
+ggsave(file=paste0("pauseDensity_cov", covT, ".pdf",device="pdf"), plot=p, width=10, height=3.5)
 

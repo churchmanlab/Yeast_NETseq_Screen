@@ -1,4 +1,4 @@
-#!/n/app/R/3.6.1/bin/Rscript
+#!/n/app/R/4.0.1/bin/Rscript
 
 # Calculate % pauses in reads across deletion strains
 
@@ -7,8 +7,13 @@ library(ggplot2)
 library(svglite)
 library(reshape2)
 
+# Get arguments
+args <- commandArgs(trailingOnly = TRUE)
+t <- args[1]
+
+
 # Load data
-df = read.table("./pauseStrength.txt", stringsAsFactors = FALSE)
+df = read.table(paste0("./pauseStrength_cov",t,".txt"), stringsAsFactors = FALSE)
 colnames(df) = c("Mut", "nRead1", "nRead2", "nPause1", "nPause2")
 
 # Calculate percent
@@ -27,23 +32,25 @@ p = ggplot(df, aes(Mut, mPerc)) +
   theme_bw() + 
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
 
-ggsave(filename = "pauseStrength.svg", plot = p, height = 6, width = 10)
+ggsave(filename = paste0("pauseStrength_cov",t,".pdf"), device="pdf",plot = p, height = 6, width = 10)
 
 # Correlate with sequencing depth
-readMed = read.file("readTotalMedians.txt", stringsAsFactors = FALSE)
+readMed = read.table("readTotalsMedians.txt", stringsAsFactors = FALSE)
 colnames(readMed) = c("Mut", "ReadTotal")
+readMed <- readMed[(readMed$Mut %in% df$Mut),] # Remove strains below gene number threshold
 
 # Merge
-data = cbind(df$Mut, df$mPerc, readMed$ReadTotal)
+data = data.frame(cbind(as.vector(df$Mut), df$mPerc, readMed$ReadTotal))
+colnames(data) = c("Mut", "mPerc", "ReadTotal")
 
-c = cor(df$mPerc, readMed$ReadTotal, method  = pearson)
-cat(paste("There is a ", round(c^2, 2), " pearson correlation between pause strength and median sequencing depth.\n", sep=""))
+c = cor(df$mPerc, readMed$ReadTotal, method  = 'pearson')
+cat(paste("There is a ", round(c^2, 4), " pearson correlation between pause strength and median sequencing depth.\n", sep=""))
 
 # Plot
-p = ggplot(data, aes(x = ReadTotal/1000000, y = mPerc, label = Mut)) + 
+p = ggplot(data, aes(x = as.numeric(ReadTotal)/1000000, y = as.numeric(mPerc), label = Mut)) + 
   geom_point() + 
   geom_text() + 
   theme_bw() + 
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
 
-ggsave(filename = "pauseStrengthCovCor.svg", plot = p, height = 5, width = 5)
+ggsave(filename = paste0("pauseStrengthCovCor_cov",t,".pdf"),device="pdf", plot = p, height = 5, width = 5)
