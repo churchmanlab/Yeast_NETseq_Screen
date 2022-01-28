@@ -24,9 +24,12 @@ All of these analyses may be run while only considering the interior gene body t
 
 # To identify gene ontology terms enriched in differentially expressed genes
 1. Create lists of differentially expressed genes (just gene name, split by whether that gene is up or down regulated, or keep both together). This can be done with the following commands:
-   - `cat SampleName.DEgenes.txt | grep -v baseMean | awk '($3 > 1) {print $0}' | cut -f1 > SampleName.DEgeneList.UP.txt` for up-regulated genes
-   - `cat SampleName.DEgenes.txt | grep -v baseMean | awk '($3 < 1) {print $0}' | cut -f1 > SampleName.DEgeneList.DOWN.txt` for down-regulated genes
-   - `cat SampleName.DEgenes.txt | grep -v baseMean | cut -f1 > SampleName.DEgeneList.ALL.txt` for all differentially expressed genes
+`for mut in $muts;
+do  
+cat ${mut}.DEgenes.txt | grep -v baseMean | awk '($3 > 1) {print $0}' | cut -f1 > ${mut}.DEgeneList.UP.txt  
+cat ${mut}.DEgenes.txt | grep -v baseMean | awk '($3 < 1) {print $0}' | cut -f1 > ${mut}.DEgeneList.DOWN.txt  
+cat ${mut}.DEgenes.txt | grep -v baseMean | cut -f1 > ${mut}.DEgeneList.ALL.txt  
+done`
 2. Download ontologizer.jar (http://ontologizer.de/commandline/)
 3. Perform gene ontology enrichment analysis by running  `for mut in $muts; do; java -jar /pathToProgram/Ontologizer.jar -a ../0_Annotations/GO_databases/sgd_mtc.gaf -g ../0_Annotations/GO_databases/go.obo -s ${mut}.DEgeneList.UP/DOWN/ALL.txt -p ../0_Annotations/Genes/txpts_all_and_antisense_GENES.txt -c Parent-Child-Intersection; done`  This can be run in turn for each of the UP, DOWN, and ALL DEgeneLists.
 5. Create a list of all GO terms that are enriched in at least one deletion strain, as `ALL.GO.txt`, e.g. `cat *_UP_GOterms.txt | sort -u > ALL.UP_GO.txt
