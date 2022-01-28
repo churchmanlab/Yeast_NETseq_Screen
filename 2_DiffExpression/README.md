@@ -26,9 +26,9 @@ All of these analyses may be run while only considering the interior gene body t
 1. Create lists of differentially expressed genes (just gene name, split by whether that gene is up or down regulated, or keep both together). This can be done with the following commands:
 `for mut in $muts;
 do  
-cat ${mut}.DEgenes.txt | grep -v baseMean | awk '($3 > 1) {print $0}' | cut -f1 > ${mut}.DEgeneList.UP.txt  
-cat ${mut}.DEgenes.txt | grep -v baseMean | awk '($3 < 1) {print $0}' | cut -f1 > ${mut}.DEgeneList.DOWN.txt  
-cat ${mut}.DEgenes.txt | grep -v baseMean | cut -f1 > ${mut}.DEgeneList.ALL.txt  
+    cat ${mut}.DEgenes.txt | grep -v baseMean | awk '($3 > 1) {print $0}' | cut -f1 > ${mut}.DEgeneList.UP.txt  
+    cat ${mut}.DEgenes.txt | grep -v baseMean | awk '($3 < 1) {print $0}' | cut -f1 > ${mut}.DEgeneList.DOWN.txt  
+    cat ${mut}.DEgenes.txt | grep -v baseMean | cut -f1 > ${mut}.DEgeneList.ALL.txt  
 done`
 2. Download ontologizer.jar (http://ontologizer.de/commandline/)
 3. Perform gene ontology enrichment analysis by running  `for mut in $muts; do; java -jar /pathToProgram/Ontologizer.jar -a ../0_Annotations/GO_databases/sgd_mtc.gaf -g ../0_Annotations/GO_databases/go.obo -s ${mut}.DEgeneList.UP/DOWN/ALL.txt -p ../0_Annotations/Genes/txpts_all_and_antisense_GENES.txt -c Parent-Child-Intersection; done`  This can be run in turn for each of the UP, DOWN, and ALL DEgeneLists.
