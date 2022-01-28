@@ -8,11 +8,15 @@ Expression levels were normalized using DESeq2 (Love et al., 2014). Differential
 2. Run DESeq2 with the command `./Scripts/DESeqAnalysis.R SampleName`. This will report the total number of DE genes and produce another two files:
    - `SampleName.ALLgenes.txt`, which is the complete output from running DESeq2
    - `SampleName.DEgenes.txt`, which is the output of DESeq2, filtered to only include those genes with pAdj < 0.05 and |Log2FoldChange| > 1. This can be used to create tables similar to **Table S2**
-3. Create a volcano plot illlustrating differentially expressed genes with the command `./Scripts/plotVolcano.R SampleName`, which will save the plot to a file called `SampleName_volcano.svg`. Before running this script, optionally remove "anti" genes from SampleName.ALLgenes.txt: `for mut in $muts;
-do;
+3. Create a volcano plot illlustrating differentially expressed genes with the command `./Scripts/plotVolcano.R SampleName`, which will save the plot to a file called `SampleName_volcano.pdf`. Before running this script, optionally remove "anti" genes from SampleName.ALLgenes.txt: `for mut in $muts;
+do
 grep -v '^anti' ${mut}.ALLgenes.txt > ${mut}.ALLgenesNoAnti.txt;
-done;`
-5. To re-create **Figure 1B**, run the command `./Scripts/plotNumDEgenes.R` to produce the plot called `NumDEgenes.pdf`. The input file for this script, `Screen_DE.txt` was created by transcribing the output of the volcano plot script (Step 3) for each deletion strain (4 columns: Deletion strain name, number of differentially up-regulated genes, number of differentially down-regulated genes, total number of differentially expressed genes).
+done`
+5. To re-create **Figure 1B**, run the command `./Scripts/plotNumDEgenes.R` to produce the plot called `NumDEgenes.pdf`. The input file for this script, `Screen_DE.txt` was created by transcribing the output of the volcano plot script (Step 3) for each deletion strain (4 columns: Deletion strain name, number of differentially up-regulated genes, number of differentially down-regulated genes, total number of differentially expressed genes): `touch Screen_DE.txt
+for mut in $muts;
+do
+awk '{print $1"\t"$3"\t"$7"\t"$14}' logs/volcano_${mut}_noAnti.log >> Screen_DE.txt;
+done`
 6. To re-create **Figure 1C**, run the command `./Scripts/plotCDFforDEgenes.R` to produce the plot called `CDFforDEgenes.pdf`. The input file for this script, `DEgeneCount.txt`, was created by running the following command after DESeq2 (Step 2) was complete for each deletion strain (optionally first remove "anti" genes from SAmpleName.DEgene.txt as above): `cat *DEgenesNoAnti.txt | cut -f 1 | grep -v baseMean | sort | uniq -c | awk 'BEGIN {OFS="\t"} {print $1, $2}' | sort -k1 -n  > DEgeneCount.txt`. A similar process can be completed for the enriched GO terms (see below) to produce **Figure S1E**
 7. To re-create **Figure S1C-D**, run the command `./Scripts/plotDEgeneCor.R` to produce the plots called `DEgeneCor_DoublingTime.svg` and `DEgeneCor_SeqDepth.svg`. The input file fot this script, `Screen_DEcor.txt`, was created such that each row contains 5 columns (Deletion strain name, median number of reads sequenced across replicates, median doubling time of deletion strain in minutes, total number of DE genes observed, and the category of the factor deleted, as in **Figure 1B**). 
 
