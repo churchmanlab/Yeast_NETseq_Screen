@@ -32,7 +32,11 @@ do`
 `done`
 2. Download ontologizer.jar (http://ontologizer.de/commandline/)
 3. Perform gene ontology enrichment analysis by running  `for mut in $muts; do java -jar /pathToProgram/Ontologizer.jar -a ../0_Annotations/GO_databases/sgd_mtc.gaf -g ../0_Annotations/GO_databases/go.obo -s ${mut}.DEgeneList.UP/DOWN/ALL.txt -p ../0_Annotations/Genes/txpts_all_and_antisense_GENES.txt -c Parent-Child-Intersection; done`  This can be run in turn for each of the UP, DOWN, and ALL DEgeneLists.
-4. Parse tables, filter and make gene lists with ParseGOtable.R
+4. Parse tables, filter and make gene lists with ParseGOtable.R: `for mut in $muts;
+do
+sbatch -p short -t 0-00:20 --wrap="../Scripts/ParseGOtable.R $mut Parent-Child-Intersection";
+done`
+
 5. Create a list of all GO terms that are enriched in at least one deletion strain, as `ALL.GO.txt`, e.g. `cat *_UP_GOterms.txt | sort -u > ALL.UP_GO.txt
 `
 6. Create a matrix for heatmap creation with the command `./Scripts/findCommonGO_MC.sh`. This will produce the file `GOoverlaps.txt`
