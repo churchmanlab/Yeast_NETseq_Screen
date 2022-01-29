@@ -40,4 +40,4 @@ done`
 5. Create a list of all GO terms that are enriched in at least one deletion strain, as `ALL.GO.txt`, e.g. `cat *_UP_GOterms.txt | sort -u > ALL.UP_GO.txt
 `
 6. Create a matrix for heatmap creation with the command `./Scripts/findCommonGO_MC.sh`. This will produce the file `GOoverlaps.txt`
-7. Plot heatmap as in **Figure 1E** with the command `./Scripts/plotGOheatmap_MC.R` to produce the plot called `GOheatmap.pdf` and the additional file `plotGO_output.txt` which is similar to **Table S3**
+7. Plot heatmap as in **Figure 1E** with the command `./Scripts/plotGOheatmap_MC.R UP/DOWN/ALL` to produce the plot called `GOheatmap.pdf` and the additional file `plotGO_output.txt` which is similar to **Table S3**
