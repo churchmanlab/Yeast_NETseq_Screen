@@ -58,7 +58,7 @@ sbatch -o logs/5_IDR_${t}.log -e logs/5_IDR_${t}.err ./Scripts/IDR.sh $t
 ```
 This will produce a file of reproducible pauses, `SampleName_PASS_pauseScore_cov${t}.txt`,which can be transformed into a bedGraph file and used in a genome browser such as IGV to look at data similar to that displayed in **Figure 4B**. It will also produce a scatterplot, a file called `SampleName_IDRscatter_cov${t}.pdf`, which is similar to that shown in **Figure 4A**. Note that this requires a file called `readTotals.txt` with 2 columns, one for the name of each replicate, and the other with the total number of uniquely-mapping reads in that sample.  To make this, use `./Scripts/GetReadTotals_MC.sh`  
 
-3. Reproducibility of pauses across all deletion strains can be assessed using the command `./Scripts/plot_IDRrep_MC.R`, which will produce the plot `IDRrep_cov${t}.pdf`, which is similar to **Figure S5A**  
+3. Reproducibility of pauses across all deletion strains can be assessed using the command `./Scripts/plot_IDRrep_MC.R $t`, which will produce the plot `IDRrep_cov${t}.pdf`, which is similar to **Figure S5A**  
 
 4. To calculate pause density, as in **Figure 4C**, use
 ```
