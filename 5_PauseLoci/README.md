@@ -6,12 +6,12 @@ Pause density was calculated as the ratio of total number of pauses to the total
 
 # To extract pause loci
 
-Before proceeding with this section, the "stt" bedGraph files created in 1_AlignData need to be sorted by chromosome. To do this, run 
+Before proceeding with this section, the "stt" bedGraph files created in 1_AlignData need to be sorted by chromosome. To do this, go back to that directory and run 
 ```
 reps="yfg1-1 yfg1-2 goi1-1 goi1-2 wt-1 wt-2"
 for rep in reps
 do
-sbatch ./Scripts/SortBedRomanNum.sh rep
+sbatch ./Scripts/SortBedGraph.sh ${rep}_stt_pos.bedGraph ${rep}_stt_neg.bedGraph
 done
 ```
 
@@ -63,7 +63,7 @@ This will produce a file of reproducible pauses, `SampleName_PASS_pauseScore_cov
 4. To calculate pause density, as in **Figure 4C**, use
 ```
 t=2
-sbatch -o logs/5_calcPDbyGene_${t}.log -e logs/5_calcPDbyGene_${t}.err ./Scripts/calcPauseDensitybyGene.sh deletionStrains.txt $t
+sbatch -o logs/5_calcPDbyGene_${t}.log -e logs/5_calcPDbyGene_${t}.err ./Scripts/calcPauseDensitybyGene.sh deletionStrainsCovFiltered.txt $t
 ```
 This will produce files containing the pause density of every gene in every deletion strain (files called `SampleName_cov${t}.pauseDensity.txt`) as well as a box plot called `pauseDensity_cov${t}.pdf`  
 
