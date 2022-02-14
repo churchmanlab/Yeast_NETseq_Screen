@@ -79,7 +79,7 @@ to generate the plot `pauseStrength_cov${t}.pdf`.These values can be correlated 
 t=2
 sbatch -o logs/5_makeMutVector.log -e logs/5_makeMutVector.err ./Scripts/run_makeMutVector_MC.sh deletionStrains.txt ${t}
 ```
-to generate the requisit matrix file to then run `./Scripts/pausePCA.R` to produce the final plot `pausePCA.pdf`
+to generate the requisit matrix file to then run `./Scripts/pausePCA.R mutPauseVectors.txt` to produce the final plot `pausePCA.pdf`
 
 7. Shared pause loci can also be visualized as a heatmap, like that shown in **Figure 4D**. In order to generate this figure, all pause loci for all deletion strains must be converted into vector form. This can be done with
 ```
