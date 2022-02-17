@@ -74,21 +74,24 @@ sbatch -o logs/5_calcPauseStrength.log -e logs/5_calcPauseStrength.err ./Scripts
 ```
 to generate the plot `pauseStrength_cov${t}.pdf`.These values can be correlated to sequencing depth, as in **Figure S5C** with the same script, which also produces the plot `pauseStrengthCovCor_cov${t}.pdf`.
 
-6. In order to perform the PCA analysis on shared pause loci across deletion strains, as depicted in **Figure S5D**, use 
+For the next two steps, all pause loci for all deletion strains must be converted into vector form. This can be done with
 ```
 t=2
 sbatch -o logs/5_makeMutVector.log -e logs/5_makeMutVector.err ./Scripts/run_makeMutVector_MC.sh deletionStrains.txt ${t}
 ```
-to generate the requisit matrix file to then run `./Scripts/pausePCA.R mutPauseVectors.txt` to produce the final plot `pausePCA.pdf`
 
-7. Shared pause loci can also be visualized as a heatmap, like that shown in **Figure 4D**. In order to generate this figure, all pause loci for all deletion strains must be converted into vector form. This can be done with
+6. In order to perform the PCA analysis on shared pause loci across deletion strains, as depicted in **Figure S5D**, run `./Scripts/pausePCA.R` to produce the final plot `pausePCA.pdf`
+
+7. Shared pause loci can also be visualized as a heatmap, like that shown in **Figure 4D**. In order to generate this figure, 
+run `./Scripts/plot_pauseLociHeatmap.R`, which will generate the plot saved to a file called `pauseHeatmap.pdf`. Update line 22 in this script before running to require more or fewer strains to share a pause (currently set at 8). Note that this script may take a while to run!  
+
+
+**Following steps are not yet updated**  
 ```
 t=2
 sbatch -o logs/5_makeLociVector.log -e logs/5_makeLociVector.err ./Scripts/makeLociVector.sh deletionStrains.txt ${t}
 ```
-Then, create the heatmap with the command `./Scripts/plot_pauseLociHeatmap.R`, which will generate the plot saved to a file called `pauseHeatmap.pdf`. Update line 22 in this script before running to require more or fewer strains to share a pause (currently set at 8). Note that this script may take a while to run!  
 
+8. Pol II pause position varies across the gene body, as illustrated in **Figure 4E**. Before this figure can be reproduced, first all pauses must be shuffled within high-coverage genes. This can be done with the command `./Scripts/shufflePauses.sh SampleName`, which will prouce the file `SampleName.IDRrep.SHUFFLE.bed`. Combine all shuffled pause files together with the command `cat *.IDRrep.SHUFFLE.bed > ALL.IDRrep.SHUFFLE.bed`.  
 
-**Following steps are not yet updated**  
-8. Pol II pause position varies across the gene body, as illustrated in **Figure 4E**. Before this figure can be reproduced, first all pauses must be shuffled within high-coverage genes. This can be done with the command `./Scripts/shufflePauses.sh SampleName`, which will prouce the file `SampleName.IDRrep.SHUFFLE.bed`. Combine all shuffled pause files together with the command `cat *.IDRrep.SHUFFLE.bed > ALL.IDRrep.SHUFFLE.bed`.
 9. Now, real and shuffled pauses can be overlapped with regions of the gene body, which can be done with the command `./Scripts/countOverlap.sh deletionStrains.txt`. Finally, we can generate the bar plot with proportion of pauses in each gene region for each deletion strain with the command `./Scripts/plotOverlap.R`, which will produce the file `PauseGeneOverlap.svg`
