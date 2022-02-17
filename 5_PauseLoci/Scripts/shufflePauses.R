@@ -1,16 +1,19 @@
-#!/n/app/R/3.6.1/bin/Rscript
+#!/n/app/R/4.0.1/bin/Rscript
 
 # Shuffle pauses, maintaining the same number per gene, none overlapping each other or real pauses
 
 # Written by: K. Lachance
 # Date: May 6, 2020
 
-# Use: ./shufflePauses.R mut strand
+# Use: ./Scripts/shufflePauses.R mut strand
 
 # Read in parameters (data)
 args <- commandArgs(trailingOnly = TRUE)
 MUT <- args[1]
 STRAND <- args[2]
+
+# Disable scientific notation
+options(scipen = 999)
 
 # Convert strand to symbol
 if (STRAND == "pos") {
