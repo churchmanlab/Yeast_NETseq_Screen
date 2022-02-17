@@ -5,7 +5,7 @@
 # Written by: K. Lachance
 # Date: July 14, 2019
 
-# Use: ./Scripts/pausePCA.R mutPauseVectors.txt 
+# Use: ./Scripts/pausePCA.R 
 
 # Install and load libraries
 cat("Loading libraries...\n")
