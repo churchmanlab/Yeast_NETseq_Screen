@@ -1,6 +1,9 @@
-#!/n/app/R/3.6.1/bin/Rscript
+#!/n/app/R/4.0.1/bin/Rscript
 
 # Show overlap of pauses with gene regions (start, mid, end) compared to control
+
+# Use: ./Scripts/plotOverlap.R
+
 
 # Load libraries
 library(ggplot2)
@@ -40,7 +43,7 @@ M[M$Mut	== "zzzCNTL" & M$Pos == "pMid", 'Cat'] = "cMid"
 M[M$Mut	== "zzzCNTL" & M$Pos == "pEnd", 'Cat'] = "cEnd"
 
 # Reorder
-ord = pDF$Mut[order(pDF$pEnd)] # Or pStart
+ord = pDF$Mut[order(pDF$pStart)] # pStart pEnd
 M$Mut <- factor(M$Mut, levels = ord)
 M$Mut <- relevel(M$Mut, "zzzCNTL")
 M$Mut <- factor(M$Mut, levels=rev(levels(M$Mut)))
@@ -72,7 +75,7 @@ p <- ggplot(M, aes(x = Mut, y = Value, fill = Cat)) +
   theme_bw() +
   theme(legend.position = "none", panel.grid = element_blank(),panel.background = element_blank())
 
-ggsave(filename="PauseGeneOverlap.svg", plot=p, width=10, height=6)
+ggsave(filename="PauseGeneOverlap.pdf",device="pdf", plot=p, width=6, height=6)
 
 
 
