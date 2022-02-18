@@ -83,15 +83,24 @@ sbatch -o logs/5_makeMutVector.log -e logs/5_makeMutVector.err ./Scripts/run_mak
 6. In order to perform the PCA analysis on shared pause loci across deletion strains, as depicted in **Figure S5D**, run `./Scripts/pausePCA.R` to produce the final plot `pausePCA.pdf`
 
 7. Shared pause loci can also be visualized as a heatmap, like that shown in **Figure 4D**. In order to generate this figure, 
-run `./Scripts/plot_pauseLociHeatmap.R`, which will generate the plot saved to a file called `pauseHeatmap.pdf`. Update line 22 in this script before running to require more or fewer strains to share a pause (currently set at 8). Note that this script may take a while to run!  
+run `./Scripts/plot_pauseLociHeatmap.R`: `sbatch -p short -t 0-12:00 -e logs/plot_pauseHeatmap.err -o logs/plot_pauseHeatmap.log --mem=5G --wrap="Rscript Scripts/plot_pauseLociHeatmap.R"`, which will generate the plot saved to a file called `pauseHeatmap.pdf`. Update line 22 in this script before running to require more or fewer strains to share a pause (currently set at 8).   
 
+8. Pol II pause position varies across the gene body, as illustrated in **Figure 4E**. Before this figure can be reproduced, first all pauses must be shuffled within high-coverage genes. This can be done with the following, which will produce the files `SampleName.IDRrep.SHUFFLE.bed`, `SampleName.IDRrep.pauseWindowsSHUFFLE.bed`, and `SampleName.IDRrep.pauseWindowsSHUFFLE.fasta` Combine all shuffled pause files together with the command `cat *.IDRrep.SHUFFLE.bed > ALL.IDRrep.SHUFFLE.bed`.  
 
-**Following steps are not yet updated**  
+```
+samples="yfg1 goi1 wt"
+t=2
+for sample in $samples
+do
+sbatch -o logs/5_shufflePausesfasta_${sample}.log -e logs/5_shufflePausesfasta_${sample}.err ./Scripts/shufflePauses_MC.sh ${sample} ${t}
+done
+```
+
+9. Now, real and shuffled pauses can be overlapped with regions of the gene body, which can be done with the command `sbatch -o logs/5_countOverlap.log -e logs/5_countOverlap.err ./Scripts/countOverlap.sh deletionStrainsCovFiltered.txt $t`. Finally, we can generate the bar plot with proportion of pauses in each gene region for each deletion strain with the command `./Scripts/plotOverlap.R`, which will produce the file `PauseGeneOverlap.pdf`
+
+10. Finally, prepare the file pauseLociVector.txt for (?)
 ```
 t=2
 sbatch -o logs/5_makeLociVector.log -e logs/5_makeLociVector.err ./Scripts/makeLociVector.sh deletionStrains.txt ${t}
 ```
 
-8. Pol II pause position varies across the gene body, as illustrated in **Figure 4E**. Before this figure can be reproduced, first all pauses must be shuffled within high-coverage genes. This can be done with the command `./Scripts/shufflePauses.sh SampleName`, which will prouce the file `SampleName.IDRrep.SHUFFLE.bed`. Combine all shuffled pause files together with the command `cat *.IDRrep.SHUFFLE.bed > ALL.IDRrep.SHUFFLE.bed`.  
-
-9. Now, real and shuffled pauses can be overlapped with regions of the gene body, which can be done with the command `./Scripts/countOverlap.sh deletionStrains.txt`. Finally, we can generate the bar plot with proportion of pauses in each gene region for each deletion strain with the command `./Scripts/plotOverlap.R`, which will produce the file `PauseGeneOverlap.svg`
