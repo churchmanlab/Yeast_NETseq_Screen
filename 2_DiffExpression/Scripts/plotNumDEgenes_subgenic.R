@@ -5,7 +5,7 @@
 # Written by: K. Lachance
 # Date: May 8, 2019
 
-# Use: ../Scripts/plotNumDEgenes.R
+# Use: ../Scripts/plotNumDEgenes_subgenic.R
 
 # Load libraries
 library(ggplot2)
@@ -13,11 +13,13 @@ library(reshape2)
 library(gridExtra)
 
 # Read table
-dat <- read.table("Screen_DE.txt", header = FALSE, stringsAsFactors = FALSE)
+dat <- read.table("Screen_sub_DE.txt", header = FALSE, stringsAsFactors = FALSE)
+dat2 <- read.table("Screen_DE.txt", header = FALSE, stringsAsFactors = FALSE)
 colnames(dat) <- c("Mut", "Up", "Down", "Total")
+colnames(dat2) <- c("Mut", "Up", "Down", "Total")
 
 # Reorder for plotting
-dat$Mut <- reorder(dat$Mut, dat$Total)
+dat$Mut <- reorder(dat2$Mut, dat2$Total)
 
 # Melt data
 m_dat = melt(dat, id.vars = "Mut", measure.vars = c("Up", "Down"))
@@ -32,5 +34,5 @@ p1 <- ggplot(m_dat, aes(x = Mut, y = value, fill = variable)) +
     theme(axis.text.x = element_text(angle = 45, hjust = 1)) + 
     theme(legend.position="none")
 
-ggsave(file="NumDEgenes.pdf", plot=p1, width=8, height=5)
+ggsave(file="NumDEgenes_subgenic.pdf", plot=p1, width=8, height=5)
 
